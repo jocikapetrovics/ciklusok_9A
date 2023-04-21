@@ -5,15 +5,35 @@ if __name__ == '__main__':
     ##print(diamonds)
 
     ##print(diamonds['carat'])
-
     sum = 0
+
     for i in diamonds['carat']:
         sum += i
-    print('karát összesen: ' + str(sum))
+    print(diamonds['carat'].count())
+    print(sum)
+    darabszam = diamonds['carat'].count()
+    atlag = sum / darabszam
+    print('atlag' + str(atlag))
 
     darabszam = diamonds['carat'].count()
-    print('darabszám: '+ str(darabszam))
-
+    print('darabszám: ' + str(darabszam))
 
     atlag = sum / darabszam
     print('átlag: ' + str(atlag))
+
+    for gyemant in diamonds.iterrows():
+        carat = gyemant[1]['carat']
+        if carat > atlag:
+            print(gyemant)
+
+    for gyemant in diamonds.iterrows():
+        color = gyemant[1]['color']
+        price = gyemant[1]['price']
+        if color == 'H':
+            szam += price
+            ##print(gyemant)
+
+            print("osszes are: " + str(darabszam))
+
+
+
